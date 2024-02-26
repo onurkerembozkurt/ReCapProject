@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
 using System;
@@ -12,21 +13,15 @@ namespace UI
    class Program
     {
         static void Main(string[] args) {
-        
-            Car car=new Car() {Id=4,BrandId=2,ColorId=2,DailyPrice=242424242,Description="Renault",ModelYear=2009 };
-            CarManager carManager=new CarManager(new InMemoryCarDal());
-            carManager.Add(car);
-            //carManager.Delete(car);
-            //carManager.Update(car);
+
+           
+            CarManager carManager=new CarManager(new EfCarDal());   
+            
             foreach (var item in carManager.GetAll())
             {
-                Console.WriteLine(item.Description);
+                Console.WriteLine(item.Id+" "+item.Description);
             }
-            //
-            foreach (var item in carManager.GetById(2))
-            {
-                Console.WriteLine(item.Description);
-            }
+            
         }
     }
 }
