@@ -17,9 +17,9 @@ namespace UI
            
             CarManager carManager=new CarManager(new EfCarDal());   
             
-            foreach (var item in carManager.GetAll())
+            foreach (var item in carManager.GetDetail() )
             {
-                Console.WriteLine(item.Id+" "+item.Description);
+                Console.WriteLine(item.CarName + " " + item.BrandName + " " + " " + item.ColorName);
             }
             
         }
