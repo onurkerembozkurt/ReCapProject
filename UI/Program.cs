@@ -14,14 +14,15 @@ namespace UI
     {
         static void Main(string[] args) {
 
-           
+          
+
             CarManager carManager=new CarManager(new EfCarDal());   
-            
-            foreach (var item in carManager.GetDetail() )
+
+            foreach (var item in carManager.GetDetail().Data)
             {
-                Console.WriteLine(item.CarName + " " + item.BrandName + " " + " " + item.ColorName);
+               Console.WriteLine(item.CarName + " " + item.BrandName + " " + " " + item.ColorName+" "+item.RentDate+" "+item.ReturnDate);
             }
-            
+
         }
     }
 }
