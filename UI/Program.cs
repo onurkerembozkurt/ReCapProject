@@ -16,7 +16,7 @@ namespace UI
 
           
 
-            CarManager carManager=new CarManager(new EfCarDal());   
+            CarManager carManager=new CarManager(new InMemoryCarDal());   
 
             foreach (var item in carManager.GetDetail().Data)
             {
