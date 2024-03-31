@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Utilities
+namespace Core.Utilities.Results
 {
     public class Result : IResult
     {
         public bool Success { get; }
 
-        public string Message {  get; }
-        public Result(bool success,string message):this(success)
+        public string Message { get; }
+        public Result(bool success, string message) : this(success)
         {
-            
+
             Message = message;
         }
         public Result(bool success)
